@@ -1,0 +1,15 @@
+Ковариантность в Java:
+1. Массивы:
+  String[] strings = new String[] {"a", "b", "c"};
+  Object[] arr = strings;
+2. Дженерики с wildcard с ограничителем сверху - extends:
+  List<Integer> ints = new ArrayList<Integer>();
+  List<? extends Number> nums = ints;
+3. Дженерик с <?> ограничителем. То же самое что и в пункте 2. Ковариантность для записи
+  ? extends Object
+
+Контравариантность в Java:
+1. Дженерики с wildcard с ограничителем снизу - super:
+  List<Number> nums = new ArrayList<Number>();
+  List<? super Integer> ints = nums;
+
