@@ -1,0 +1,30 @@
+В Java запрет переопределения методов в потомках реализуется ключевым словом final.
+
+class Parent {
+    public final void method() {
+        System.out.println("Parent method");
+    }
+}
+
+class Child extends Parent {
+    // Компилятор выдаст ошибку
+    public void method() {
+        System.out.println("Child method");
+    }
+}
+
+Есть ограничение: нельзя вешать модификатор final на методы, которые мы переопределяем у
+класса-родителя.
+
+class Parent {
+    public void method() {
+        System.out.println("Parent method");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    public final void method() { // Ошибка компиляции
+        System.out.println("Child method");
+    }
+}
