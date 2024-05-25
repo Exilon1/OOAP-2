@@ -12,16 +12,6 @@ import java.util.Set;
 
 public abstract class General implements Serializable {
 
-  private static boolean hasChild = false;
-
-  public static boolean hasChild() {
-    return hasChild;
-  }
-
-  public static void setHasChildTrue() {
-    General.hasChild = true;
-  }
-
   public <T extends General> void deepCopy(T target, T source) {
     Class<?> sourceClass = source.getClass();
     Class<?> targetClass = target.getClass();
@@ -133,11 +123,4 @@ public abstract class General implements Serializable {
 
 class Any extends General {
 
-  public Any() {
-    if (!hasChild()) {
-      setHasChildTrue();
-    } else {
-      throw new IllegalStateException("The General class can only have one child.");
-    }
-  }
 }
