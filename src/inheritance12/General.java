@@ -35,12 +35,12 @@ class Main {
     None none = new None();
 
     // Примеры использования tryAssign
-    General result1 = general.tryAssign(any);  // Вернет any, так как Any является потомком General
-    General result2 = general.tryAssign(none); // Вернет none, так как None является потомком General
+    General result1 = general.tryAssign(any);  // Вернет Any, так как Any является потомком General
+    General result2 = general.tryAssign(none); // Вернет None, так как None является потомком General
 
     Any result3 = any.tryAssign(general); // Вернет None, так как General не является потомком Any
-    Any result4 = any.tryAssign(any);     // Вернет any, так как Any является потомком Any
-    Any result5 = any.tryAssign(none);    // Вернет none, так как None является потомком Any
+    Any result4 = any.tryAssign(any);     // Вернет Any, так как Any является потомком Any
+    Any result5 = any.tryAssign(none);    // Вернет None, так как None является потомком Any
 
     System.out.println(result1.getClass().getSimpleName());
     System.out.println(result2.getClass().getSimpleName());
